@@ -50,11 +50,11 @@ async function detectAdBlock() {
         }
 
         // 4. Check if the ad blocker blocks n ados.js file
-        const adosJsUrl = 'https://static.adocean.pl/_1451054334/ad.js';
-        const adosJsResponse = await fetch(new Request(adosJsUrl));
-        if (!adosJsResponse.headers.get('content-length')) {
-            adBlockEnabled = true;
-        }
+        // const adosJsUrl = 'https://static.adocean.pl/_1451054334/ad.js';
+        // const adosJsResponse = await fetch(new Request(adosJsUrl));
+        // if (!adosJsResponse.headers.get('content-length')) {
+        //     adBlockEnabled = true;
+        // }
 
     } catch (e) {
         console.error(e);
