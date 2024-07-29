@@ -1,13 +1,3 @@
-// import { detectAdBlock } from 'resources/detectAdBlock.js';
-
-// export default class AntiAdBlocker {
-//   constructor({hiddenBody: hiddenBody}) {
-
-//     const config = {
-//       hiddenBody: hiddenBody ?? true
-//     }
-
-
 
   const hiddenBody = false
 
@@ -248,3 +238,22 @@
   function getReturnBackButton(){
     return `${isItalianLanguage ? 'Indietro' : 'Back'}`;
   }
+
+  // Esportare le funzioni e le variabili
+if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+  module.exports = {
+    hiddenBody,
+    isItalianLanguage,
+    imagesCdnUrl,
+    detectAdBlock,
+    showBannerAdBlock
+  };
+} else {
+  window.myLibrary = {
+    hiddenBody,
+    isItalianLanguage,
+    imagesCdnUrl,
+    detectAdBlock,
+    showBannerAdBlock
+  };
+}
