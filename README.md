@@ -4,8 +4,8 @@
 [![Playwright](https://github.com/The-3Labs-Team/potatoshield/actions/workflows/playwright.yml/badge.svg)](https://github.com/The-3Labs-Team/potatoshield/actions/workflows/playwright.yml)
 [![Build](https://github.com/The-3Labs-Team/potatoshield/actions/workflows/build.yml/badge.svg)](https://github.com/The-3Labs-Team/potatoshield/actions/workflows/build.yml)
 ![License](https://img.shields.io/github/license/the-3labs-team/potatoshield)
-![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hy/The-3Labs-Team/potatoshield?label=downloads)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a7b3762f32a20d9e8777/maintainability)](https://codeclimate.com/github/The-3Labs-Team/potatoshield/maintainability)
+<!--![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hy/The-3Labs-Team/potatoshield?label=downloads)-->
 
 Potatoshield is a revolutionary script designed to empower website owners in the battle against adblock software. With its lightweight and user-friendly nature, Potatoshield effortlessly detects adblockers and displays a captivating banner to users.
 
