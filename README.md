@@ -104,17 +104,13 @@ You can use the CDN to import the script in your layout:
 
 ## Make it undetectable
 
-To make potatoshield undetectable by adblockers, you can use the following tips:
+To make potatoshield undetectable by adblockers, [![Open in GitHub Codespaces](https://img.shields.io/badge/Open_in_GitHub_Codespaces-gray?logo=github)](https://codespaces.new/The-3Labs-Team/potatoshield) or clone the repo.
 
-- **Rotate the script name**: Change the name of the script file every week or so. This will make it harder for adblockers to detect it.
-
-- **Obfuscate the code**: You can obfuscate the code of the script to make it harder to read and detect.
-
-You can clone the repository and build the script with the following command:
+After that, open a terminal and run the following command:
 
 ```bash
 npm run build
 ```
 
-This will generate a minified and obfuscated version of the script in the `dist` folder called `potatoshield.min.ob.js`.
+This will generate a minified and obfuscated script in the `dist` folder called `potatoshield.min.ob.js`. You can add it (method 1) or rename this file (method 3) to something less suspicious and host it on your server.
 
