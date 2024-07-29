@@ -13,6 +13,7 @@ For the best experience, please read the RTFM article [here](...).
 - [x] No dependencies
 - [x] Open-source
 - [x] Shows a banner to the user in multiple languages
+- [ ] Use with NPM
 
 ## List of detected adblocks
 
@@ -41,7 +42,7 @@ If you want to update the list, please see the CONTRIBUTOR.md file
 
 Before you start using potatoshield, you need to know that it is not a 100% bulletproof solution. Adblockers are constantly evolving, and they may find a way to detect potatoshield in the future.
 
-The best way to fight against adblock users is to clone the project, build the script, and host it on your server. This way, you can rotate the script name and make it harder for adblockers to detect it.
+The best way to fight against adblock users is to clone the project, build the script, and host it on your server (jump to #https://github.com/The-3Labs-Team/potatoshield#make-it-undetectable). This way, you can rotate the script name and make it harder for adblockers to detect it.
 
 ## Installation
 
@@ -49,7 +50,7 @@ You have three methods to use potatoshield on your website:
 
 ### 1. Inline the script (recommended)
 
-You can inline the script in your HTML layout:
+You can inline the script in your HTML layout before the closing `</body>` tag:
 
 ```html
 <script type="module" defer>
@@ -57,7 +58,7 @@ You can inline the script in your HTML layout:
 </script>
 ```
 
-### 2. Import the script (partially recommended)
+### 2. Import the script (partially recommended) // Not yet implemented
 
 You can install potatoshield by using NPM:
 
@@ -81,7 +82,7 @@ You can download the script from releases, rename it to something less suspiciou
 <script type="module" defer src="your-potato-random-file.js"></script>
 ```
 
-This can be easily detected by adblockers, so it is not recommended.
+This can be easily detected by adblocker lists, so it is not recommended.
 
 > 💡 Why not using CDN? Because adblockers can easily block the CDN URL. You can host the file on your own server and randomize the name to avoid detection. Remember to rotate the file name every week or so, or Adblock users (and lists) will be able to block it.
 
