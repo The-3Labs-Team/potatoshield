@@ -11,7 +11,6 @@
     "build": "npm run minify && npm run obfuscate",
     "test-live": "vite",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "http-server -p 8080",
     "lint": "eslint src/**",
     "lint:fix": "eslint src/** --fix"
   },
@@ -33,7 +32,6 @@
     "vite": "^5.3.5"
   },
   "dependencies": {
-    "http-server": "^14.1.1",
     "javascript-obfuscator": "^4.1.1",
     "uglify-js": "^3.19.1"
   }

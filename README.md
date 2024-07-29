@@ -1,6 +1,8 @@
 # potatoshield
 🥔 The final solution for block Adblock users on your website
 
+> ⚠️ **Note*: This project is still in development. The current version is a beta version, and it may not work as expected, it may have bugs and it may change in the future. Use it at your own risk.
+
 For the best experience, please read the RTFM article [here](...).
 
 ## Features

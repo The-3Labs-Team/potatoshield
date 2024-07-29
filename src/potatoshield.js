@@ -1,4 +1,3 @@
-
   const hiddenBody = false
 
   const imagesCdnUrl = 'https://cdn.jsdelivr.net/gh/The-3Labs-Team/js-anti-adblock@main/assets'  
@@ -49,7 +48,6 @@
     body.innerHTML +=
           `
           <div style="${getRandomStyle()};">
-          <!-- <div class="style"> -->
               <div style="width: 100%; max-width: 500px; margin: auto; background-color: white; border-radius: 1rem; overflow: hidden; position: relative;">
 
               <img src="${imagesCdnUrl}/logo-small.svg" style="position: absolute; top: 0; right: 0; background-color: #D9D9D9; padding: 10px; border-bottom-left-radius: 1rem;">
