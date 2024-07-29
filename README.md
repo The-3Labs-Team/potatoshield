@@ -91,7 +91,7 @@ This can be easily detected by adblocker lists, so it is not recommended.
 You can use the CDN to import the script in your layout:
 
 ```html
-	 <script src="https://cdn.jsdelivr.net/gh/The-3Labs-Team/potatoshield@main/dist/potatoshield.min.ob.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/The-3Labs-Team/potatoshield@main/dist/potatoshield.min.ob.js"></script>
 ```
 
 This can be easily detected by adblocker lists, so it is not recommended.
