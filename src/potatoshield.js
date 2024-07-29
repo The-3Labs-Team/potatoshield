@@ -57,6 +57,7 @@ async function detectAdBlock() {
         }
 
     } catch (e) {
+        console.error(e);
         adBlockEnabled = true;
     } finally {
         console.log(`AdBlock Enabled: ${adBlockEnabled}`);
