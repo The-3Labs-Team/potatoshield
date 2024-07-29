@@ -25,7 +25,7 @@ If you want to update the list, please see the CONTRIBUTOR.md file
 | Software | Version | Detected | Last check         |
 |---------|----------|----------|--------------------|
 | uBlock  | 1.0      | ✅       | 2024-07-29         |
-// Adblock, Adblock Plus, Adblock Ultimate, Adblock Max, AdGuard, Ghostery
+<!-- Adblock, Adblock Plus, Adblock Ultimate, Adblock Max, AdGuard, Ghostery -->
 
 ### Browsers
 

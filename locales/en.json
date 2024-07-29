@@ -17,11 +17,11 @@
             },
         "step2":
             {
-                "instruction": "Follow the instructions to disable ad blocking",
+                "instruction": "Follow the instructions to disable ad blocking"
             },
         "step3":
             {
-                "instruction": "Refresh the page by clicking on \"Ok, done!\"",
+                "instruction": "Refresh the page by clicking on \"Ok, done!\""
             }
     }
 }

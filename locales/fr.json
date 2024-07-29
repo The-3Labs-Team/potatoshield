@@ -1,0 +1,27 @@
+{
+    "banner": {
+        "prefix": "J'ai cru voir un...",
+        "description": "Nous avons une publicité limitée sur nos sites, nous vous demandons de désactiver AdBlock pour continuer à naviguer. Merci !",
+        "content": "PotatoShield est un projet de l'équipe 3Labs™",
+        "howToRemove": "Comment supprimer",
+        "okDone": "Ok, c'est fait",
+        "howToDisable": "Comment désactiver",
+        "back": "Retour"
+    },
+    "info": {
+        "title": "Comment désactiver Ad Blocker",
+        "step1": 
+            {
+                "instruction": "Cliquez sur l'icône de l'extension du bloqueur de publicités",
+                "description": "Il est généralement situé dans le coin supérieur droit de l'écran."
+            },
+        "step2":
+            {
+                "instruction": "Suivez les instructions pour désactiver le blocage des publicités",
+            },
+        "step3":
+            {
+                "instruction": "Actualisez la page en cliquant sur \"Ok, c'est fait !\"",
+            }
+    }
+}
