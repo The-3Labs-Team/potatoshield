@@ -1,6 +1,6 @@
 {
   "name": "potatoshield",
-  "version": "1.0.0",
+  "version": "0.0.4",
   "description": "🥔 The final solution for block Adblock users on your website",
   "main": "dist/potatoshield.min.ob.js",
   "scripts": {
