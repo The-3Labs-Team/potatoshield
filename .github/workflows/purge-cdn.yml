@@ -11,4 +11,4 @@ jobs:
       - uses: gacts/purge-jsdelivr-cache@v1
         with:
           url: |
-            https://cdn.jsdelivr.net/gh/The-3Labs-Team/potatoshield@1/dist/potatoshield.js
+            https://cdn.jsdelivr.net/gh/The-3Labs-Team/potatoshield@1/dist/potatoshield.min.ob.js
