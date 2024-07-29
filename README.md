@@ -2,6 +2,7 @@
 🥔 The final solution for block Adblock users on your website
 
 [![Lint](https://github.com/The-3Labs-Team/potatoshield/actions/workflows/lint.yml/badge.svg)](https://github.com/The-3Labs-Team/potatoshield/actions/workflows/lint.yml)
+[![Playwright](https://github.com/The-3Labs-Team/potatoshield/actions/workflows/playwright.yml/badge.svg)](https://github.com/The-3Labs-Team/potatoshield/actions/workflows/playwright.yml)
 [![Build](https://github.com/The-3Labs-Team/potatoshield/actions/workflows/build.yml/badge.svg)](https://github.com/The-3Labs-Team/potatoshield/actions/workflows/build.yml)
 ![License](https://img.shields.io/github/license/the-3labs-team/potatoshield)
 ![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hy/The-3Labs-Team/potatoshield?label=downloads)
