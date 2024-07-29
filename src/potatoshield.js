@@ -1,4 +1,21 @@
-  const hiddenBody = false
+import i18next from 'i18next';
+import Backend from 'i18next-http-backend';
+import LanguageDetector from 'i18next-browser-languagedetector';
+
+i18next
+    .use(Backend)
+    .use(LanguageDetector)
+    .init({
+        fallbackLng: 'en',
+        backend: {
+            loadPath: '/locales/{{lng}}.json'
+        }
+    }, (err, t) => {
+        if (err) return console.error(err);
+        showBannerAdBlock();
+    });
+
+const hiddenBody = false
 
   const imagesCdnUrl = 'https://cdn.jsdelivr.net/gh/The-3Labs-Team/js-anti-adblock@main/assets'  
 
@@ -48,38 +65,31 @@
     body.innerHTML +=
           `
           <div style="${getRandomStyle()};">
-              <div style="width: 100%; max-width: 500px; margin: auto; background-color: white; border-radius: 1rem; overflow: hidden; position: relative;">
+            <div style="width: 100%; max-width: 500px; margin: auto; background-color: white; border-radius: 1rem; overflow: hidden; position: relative;">
 
-              <img src="${imagesCdnUrl}/logo-small.svg" style="position: absolute; top: 0; right: 0; background-color: #D9D9D9; padding: 10px; border-bottom-left-radius: 1rem;">
+            <img src="${imagesCdnUrl}/logo-small.svg" style="position: absolute; top: 0; right: 0; background-color: #D9D9D9; padding: 10px; border-bottom-left-radius: 1rem;">
 
-  
-  
-                  <!-- Content -->
-                  <section id="content">
-                    ${getContentFirstPage()}
-                  </section>
-  
-                  <p style="text-align: center; margin: 20px 0; font-size: .7rem;">
-                      PotatoShield is a  project by <a href="https://www.3labs.it" target="_blank" style="font-weight: bold; text-decoration: none; color: black;">3Labs™ Team</a>
-                  </p>
-  
-                  
-                  <!-- Buttons -->
-  
-                  <div style="display: flex; border-top: 1px solid #E5E7EB">
-  
-                  <span onclick="toggleContent()" id="how-to-remove" style="width: 50%; height: 60px; padding: 10px; text-align: center; display: flex; justify-content: center; align-items:center; cursor: pointer; background-color: white; ">
-                    ${getHowDisableButton()}
-                  </span>
-                  <span onclick="location.reload()" style="width: 50%; height: 60px; padding: 10px; text-align: center; display: flex; justify-content: center; align-items:center; cursor: pointer; background-color: black; color: white; font-weight: bold; ">
-                    Ok, done
-                  </span>
-  
-                  </div>
-  
-  
-              </div>  
-          </div>
+            <!-- Content -->
+            <section id="content">
+              ${getContentFirstPage()}
+            </section>
+
+            <p style="text-align: center; margin: 20px 0; font-size: .7rem;">
+                ${i18next.t('banner.content')}
+            </p>
+
+            <!-- Buttons -->
+            <div style="display: flex; border-top: 1px solid #E5E7EB">
+
+            <span onclick="toggleContent()" id="how-to-remove" style="width: 50%; height: 60px; padding: 10px; text-align: center; display: flex; justify-content: center; align-items:center; cursor: pointer; background-color: white;">
+              ${i18next.t('banner.howToRemove')}
+            </span>
+            <span onclick="location.reload()" style="width: 50%; height: 60px; padding: 10px; text-align: center; display: flex; justify-content: center; align-items:center; cursor: pointer; background-color: black; color: white; font-weight: bold;">
+              ${i18next.t('banner.okDone')}
+            </span>
+
+            </div>
+        </div>
 
           <style>
           
@@ -186,7 +196,7 @@
 
                 <div style="display:flex; justify-content: space-between;">
                     <p>
-                    <span style="text-transform: uppercase;">Alt!</span> I thought I saw an...
+                    <span style="text-transform: uppercase;">Alt!</span> ${i18next.t('banner.prefix')}
                         <br>
                         <span style="font-size: 3rem; font-weight: bold; text-transform: uppercase;">Adblock!</span>
                     </p>
@@ -196,7 +206,7 @@
                 
 
                 <p style="font-size: 1.1rem; color: rgb(107, 114, 128); line-height: 28px; margin: 20px 0;">
-                    We have limited advertising on our sites, we ask you to disable AdBlock to continue browsing. Thank you!
+                  ${i18next.t('banner.description')}
                 </p>
             </div>
             
@@ -204,35 +214,35 @@
         </div> `;
 }
 
-  function getContentSecondPage(){
-    return `<div id="content-2" style="padding: 30px 10px 10px; min-height: 305px">
-          <div style="margin-left: 10px;">
-              <p style="font-weight: bold; font-size: 1.5rem; margin-bottom: 20px;">
-              How to disable Ad Blocker
-              </p>
+function getContentSecondPage(){
+  return `<div id="content-2" style="padding: 30px 10px 10px; min-height: 305px">
+        <div style="margin-left: 10px;">
+            <p style="font-weight: bold; font-size: 1.5rem; margin-bottom: 20px;">
+              ${i18next.t('info.title')}
+            </p>
 
-              <ol style="font-size: 1.1rem; color: rgb(107, 114, 128);">
-                  <li style="margin: 25px 20px;">
-                    <span style="font-weight: bold;">Click on the extension icon for the ad blocker</span>. It is usually located in the top right corner of the screen.
-                  </li>   
-                  <li style="margin: 25px 20px;">
-                    Follow the instructions to <span style="font-weight: bold;">disable ad blocking</span>.
-                  </li>
-                  <li style="margin: 25px 20px;">
-                    Refresh the page by clicking on <span style="font-weight: bold;">"Ok, done!"</span>
-                  </li>
-              </ol>
+            <ol style="font-size: 1.1rem; color: rgb(107, 114, 128);">
+                <li style="margin: 25px 20px;">
+                  <span style="font-weight: bold;">${i18next.t('info.step1.instruction')}</span>. ${i18next.t('info.step1.description')}
+                </li>   
+                <li style="margin: 25px 20px;">
+                  ${i18next.t('info.step2.instruction')}
+                </li>
+                <li style="margin: 25px 20px;">
+                  ${i18next.t('info.step3.instruction')}
+                </li>
+            </ol>
 
-          </div>
-      </div>`;
-  }
+        </div>
+    </div>`;
+}
 
   function getHowDisableButton(){
-    return 'How to disable?';
+    return i18next.t('banner.howDisable');
   }
 
   function getReturnBackButton(){
-    return 'Back';
+    return i18next.t('banner.back');
   }
 
   // Esportare le funzioni e le variabili

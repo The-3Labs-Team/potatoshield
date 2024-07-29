@@ -12,7 +12,7 @@ For the best experience, please read the RTFM article [here](...).
 - [x] Easy to use
 - [x] No dependencies
 - [x] Open-source
-- [x] Shows a banner to the user
+- [x] Shows a banner to the user in multiple languages
 
 ## List of detected adblocks
 
