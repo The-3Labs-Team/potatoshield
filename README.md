@@ -5,8 +5,8 @@
 [![Playwright](https://github.com/The-3Labs-Team/potatoshield/actions/workflows/playwright.yml/badge.svg)](https://github.com/The-3Labs-Team/potatoshield/actions/workflows/playwright.yml)
 [![Build](https://github.com/The-3Labs-Team/potatoshield/actions/workflows/build.yml/badge.svg)](https://github.com/The-3Labs-Team/potatoshield/actions/workflows/build.yml)
 ![License](https://img.shields.io/github/license/the-3labs-team/potatoshield)
-<!--![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hy/The-3Labs-Team/potatoshield?label=downloads)-->
 [![Maintainability](https://api.codeclimate.com/v1/badges/a7b3762f32a20d9e8777/maintainability)](https://codeclimate.com/github/The-3Labs-Team/potatoshield/maintainability)
+<!--![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hy/The-3Labs-Team/potatoshield?label=downloads)-->
 
 > ⚠️ **Note*: This project is still in development. The current version is a beta version, and it may not work as expected, it may have bugs and it may change in the future. Use it at your own risk.
 
