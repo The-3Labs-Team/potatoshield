@@ -1,8 +1,6 @@
 
   const hiddenBody = false
 
-  const isItalianLanguage = navigator.language === 'it-IT' ? true : false;
-
   const imagesCdnUrl = 'https://cdn.jsdelivr.net/gh/The-3Labs-Team/js-anti-adblock@main/assets'  
 
   const body = document.querySelector('body')
@@ -64,7 +62,7 @@
                   </section>
   
                   <p style="text-align: center; margin: 20px 0; font-size: .7rem;">
-                      ${isItalianLanguage ? 'PotatoShield è un progetto di' : 'PotatoShield is a  project by' } <a href="https://www.3labs.it" target="_blank" style="font-weight: bold; text-decoration: none; color: black;">3Labs™ Team</a>
+                      PotatoShield is a  project by <a href="https://www.3labs.it" target="_blank" style="font-weight: bold; text-decoration: none; color: black;">3Labs™ Team</a>
                   </p>
   
                   
@@ -76,7 +74,7 @@
                     ${getHowDisableButton()}
                   </span>
                   <span onclick="location.reload()" style="width: 50%; height: 60px; padding: 10px; text-align: center; display: flex; justify-content: center; align-items:center; cursor: pointer; background-color: black; color: white; font-weight: bold; ">
-                    ${isItalianLanguage ? 'Ok, fatto!' : 'Ok, done!'}
+                    Ok, done
                   </span>
   
                   </div>
@@ -190,7 +188,7 @@
 
                 <div style="display:flex; justify-content: space-between;">
                     <p>
-                    ${isItalianLanguage ? '<span style="text-transform: uppercase;">Alt!</span> Mi è sembrato di vedere un...' : '<span style="text-transform: uppercase;">Alt!</span> I thought I saw an...' }
+                    <span style="text-transform: uppercase;">Alt!</span> I thought I saw an...
                         <br>
                         <span style="font-size: 3rem; font-weight: bold; text-transform: uppercase;">Adblock!</span>
                     </p>
@@ -200,7 +198,7 @@
                 
 
                 <p style="font-size: 1.1rem; color: rgb(107, 114, 128); line-height: 28px; margin: 20px 0;">
-                    ${isItalianLanguage ? 'Abbiamo limitato la pubblicità sui nostri siti, ti chiediamo la cortesia di disabilitare l\'AdBlock per continuare a navigare. Grazie!' : 'We have limited advertising on our sites, we ask you to disable AdBlock to continue browsing. Thank you!'}
+                    We have limited advertising on our sites, we ask you to disable AdBlock to continue browsing. Thank you!
                 </p>
             </div>
             
@@ -212,18 +210,18 @@
     return `<div id="content-2" style="padding: 30px 10px 10px; min-height: 305px">
           <div style="margin-left: 10px;">
               <p style="font-weight: bold; font-size: 1.5rem; margin-bottom: 20px;">
-              ${isItalianLanguage ? 'Come disattivare l\'Ad Blocker' : 'How to disable Ad Blocker'}
+              How to disable Ad Blocker
               </p>
 
               <ol style="font-size: 1.1rem; color: rgb(107, 114, 128);">
                   <li style="margin: 25px 20px;">
-                    ${isItalianLanguage ? '<span style="font-weight: bold;">Clicca sull\'icona dell\'estensione per il blocco annunci</span>. Di solito si trova nell\'angolo in alto a destra dello schermo.' : '<span style="font-weight: bold;">Click on the extension icon for the ad blocker</span>. It is usually located in the top right corner of the screen.'}
+                    <span style="font-weight: bold;">Click on the extension icon for the ad blocker</span>. It is usually located in the top right corner of the screen.
                   </li>   
                   <li style="margin: 25px 20px;">
-                    ${isItalianLanguage ? 'Segui le istruzioni per <span style="font-weight: bold;">disattivare il blocco annunci</span>.' : 'Follow the instructions to <span style="font-weight: bold;">disable ad blocking</span>.'}
+                    Follow the instructions to <span style="font-weight: bold;">disable ad blocking</span>.
                   </li>
                   <li style="margin: 25px 20px;">
-                    ${isItalianLanguage ? 'Aggiorna la pagina cliccando su <span style="font-weight: bold;">"Ok, fatto!"</span>' : 'Refresh the page by clicking on <span style="font-weight: bold;">"Ok, done!"</span>'}
+                    Refresh the page by clicking on <span style="font-weight: bold;">"Ok, done!"</span>
                   </li>
               </ol>
 
@@ -232,18 +230,17 @@
   }
 
   function getHowDisableButton(){
-    return `${isItalianLanguage ? 'Come lo disattivo?' : 'How to disable?'}`;
+    return 'How to disable?';
   }
 
   function getReturnBackButton(){
-    return `${isItalianLanguage ? 'Indietro' : 'Back'}`;
+    return 'Back';
   }
 
   // Esportare le funzioni e le variabili
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports = {
     hiddenBody,
-    isItalianLanguage,
     imagesCdnUrl,
     detectAdBlock,
     showBannerAdBlock
@@ -251,7 +248,6 @@ if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 } else {
   window.myLibrary = {
     hiddenBody,
-    isItalianLanguage,
     imagesCdnUrl,
     detectAdBlock,
     showBannerAdBlock
