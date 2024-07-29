@@ -64,10 +64,11 @@ You can inline the script in your HTML layout before the closing `</body>` tag:
 ```html
 <script type="module" defer>
   // Add dist/potatoshield.min.ob.js content here
+  const a0_0x191034=a0_0x4f56;(function(_0x15f1d4,_0x16b33d){const _0x3b7bb4=a0_0x4f56...
 </script>
 ```
 
-### 2. Import the script (partially recommended) // Not yet implemented
+<!--### 2. Import the script (partially recommended) // Not yet implemented
 
 You can install potatoshield by using NPM:
 
@@ -79,9 +80,9 @@ Then, you can import it in one of your main JavaScript file:
 
 ```javascript
 import 'potatoshield';
-```
+```-->
 
-### 3. Download the script (not recommended)
+### 3. Download the script (partially recommended)
 
 You can download the script from releases at the root of your website, rename it to something less suspicious and import it in your layout:
 
@@ -89,19 +90,17 @@ You can download the script from releases at the root of your website, rename it
 <script type="module" defer src="your-potato-random-file.js"></script>
 ```
 
-This can be easily detected by adblocker lists, so it is not recommended.
-
-> 💡 Why not using CDN? Because adblockers can easily block the CDN URL. You can host the file on your own server and randomize the name to avoid detection. Remember to rotate the file name every week or so, or Adblock users (and lists) will be able to block it.
+This can be easily detected manually by users, so it is not recommended.
 
 ### 4. Use the CDN (not recommended)
+
+> 💡 Why not using CDN? Because adblockers can easily block the CDN URL. You can host the file on your own server and randomize the name to avoid detection (see above). Remember to rotate the file name every week or so, or Adblock users (and lists) will be able to block it.
 
 You can use the CDN to import the script in your layout:
 
 ```html
 <script src="https://cdn.jsdelivr.net/gh/The-3Labs-Team/potatoshield@main/dist/potatoshield.min.ob.js"></script>
 ```
-
-This can be easily detected by adblocker lists, so it is not recommended.
 
 ## Make it undetectable
 
@@ -118,7 +117,4 @@ npm run build
 ```
 
 This will generate a minified and obfuscated version of the script in the `dist` folder called `potatoshield.min.ob.js`.
-
-It is important to remember that potatoshield is not a 100% bulletproof solution. It is a tool to help you fight against adblock users, but it is not a guarantee that it will work forever. Adblockers are constantly evolving, and they may find a way to detect potatoshield in the future.
-
 
