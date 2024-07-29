@@ -1,29 +1,61 @@
-// import { detectAdBlock } from 'resources/detectAdBlock.js';
+const hiddenBody = false
 
-// export default class AntiAdBlocker {
-//   constructor({hiddenBody: hiddenBody}) {
+const isItalianLanguage = navigator.language === 'it-IT' ? true : false;
 
-//     const config = {
-//       hiddenBody: hiddenBody ?? true
-//     }
+const imagesCdnUrl = 'https://cdn.jsdelivr.net/gh/The-3Labs-Team/js-anti-adblock@main/assets'  
+
+const body = document.querySelector('body')
+
+window.onload = async () => {
+  const adBlockEnabled = await detectAdBlock();
+
+  if (adBlockEnabled) {
+    body.setAttribute('aria-hidden', 'true');
+    if (hiddenBody) {
+      body.innerHTML = '';
+    }
+    showBannerAdBlock();
+  }
+};
 
 async function detectAdBlock() {
     let adBlockEnabled = false;
-    const googleAdUrl = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
 
     try {
         const keywordsToCheck = ['uBlock', 'height:1px!important'];
 
+        // 1. Check if the ad blocker is enabled by fetching the Google Ads URL
+        const googleAdUrl = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
         const response = await fetch(new Request(googleAdUrl));
         if (!response.headers.get('content-length')) {
             adBlockEnabled = true;
         }
 
+        // 2. Check if the response text contains any keywords
         const responseText = await response.text();
         const adBlockDetected = keywordsToCheck.some(keyword => responseText.includes(keyword));
         if (adBlockDetected) {
             adBlockEnabled = true;
         }
+
+        // 3. Check if the ad blocker is enabled by creating a fake ad element
+        var e=document.createElement('div');
+        e.id='ZAoUDSVetuRd';
+        e.style.display='none';
+        document.body.appendChild(e);
+        if (document.getElementById('ZAoUDSVetuRd')) {
+          adBlockEnabled = false;
+        } else {
+          adBlockEnabled = true;
+        }
+
+        // 4. Check if the ad blocker blocks n ados.js file
+        const adosJsUrl = 'https://static.adocean.pl/_1451054334/ad.js';
+        const adosJsResponse = await fetch(new Request(adosJsUrl));
+        if (!adosJsResponse.headers.get('content-length')) {
+            adBlockEnabled = true;
+        }
+
     } catch (e) {
         adBlockEnabled = true;
     } finally {
@@ -33,28 +65,8 @@ async function detectAdBlock() {
     return adBlockEnabled;
   }
 
-    const hiddenBody = false
-
-    const isItalianLanguage = navigator.language === 'it-IT' ? true : false;
-
-    const imagesCdnUrl = 'https://cdn.jsdelivr.net/gh/The-3Labs-Team/js-anti-adblock@main/assets'  
-
-    const body = document.querySelector('body')
-
-    window.onload = async () => {
-      const adBlockEnabled = await detectAdBlock();
-
-      if (adBlockEnabled) {
-        body.setAttribute('aria-hidden', 'true');
-        if (hiddenBody) {
-          body.innerHTML = '';
-        }
-        showBannerAdBlock();
-      }
-    };
-
     function showBannerAdBlock () {
-      body.style.overflow = 'hidden'
+      body.style.setProperty('overflow', 'hidden', 'important');
 
       body.innerHTML +=
             `

@@ -23,11 +23,15 @@ If you want to update the list, please see the CONTRIBUTOR.md file
 
 ### Adblockers
 
-| Software | Version | Detected | Last check         |
-|---------|----------|----------|--------------------|
-| uBlock  | 1.0      | ✅       | 2024-07-29         |
-<!-- Adblock, Adblock Plus, Adblock Ultimate, Adblock Max, AdGuard, Ghostery -->
-
+| Software         | Version | Detected | Last check | Official Site                |
+|------------------|---------|----------|------------|------------------------------|
+| uBlock           | 1.0     | ✅        | 2024-07-29 | [uBlock](https://ublock.org) |
+| Adblock          | N/D     | ✅        | 2024-07-29 | [Adblock](https://getadblock.com) |
+| Adblock Plus     |         |          |            | [Adblock Plus](https://adblockplus.org) |
+| Adblock Ultimate |         |          |            | [Adblock Ultimate](https://adblockultimate.net) |
+| Adblock Max      |         |          |            | [Adblock Max](https://adblockmax.com) |
+| AdGuard          |         |          |            | [AdGuard](https://adguard.com) |
+| Ghostery         |         |          |            | [Ghostery](https://ghostery.com) |
 ### Browsers
 
 | Browser | Version | Detected | Last check         |
