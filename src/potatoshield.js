@@ -1,50 +1,24 @@
-import i18next from 'i18next';
-import Backend from 'i18next-http-backend';
-import LanguageDetector from 'i18next-browser-languagedetector';
+// import { detectAdBlock } from 'resources/detectAdBlock.js';
 
-i18next
-    .use(Backend)
-    .use(LanguageDetector)
-    .init({
-        fallbackLng: 'en',
-        backend: {
-            loadPath: '/locales/{{lng}}.json'
-        }
-    }, (err, t) => {
-        if (err) return console.error(err);
-        showBannerAdBlock();
-    });
+// export default class AntiAdBlocker {
+//   constructor({hiddenBody: hiddenBody}) {
 
-const hiddenBody = false
+//     const config = {
+//       hiddenBody: hiddenBody ?? true
+//     }
 
-  const imagesCdnUrl = 'https://cdn.jsdelivr.net/gh/The-3Labs-Team/js-anti-adblock@main/assets'  
-
-  const body = document.querySelector('body')
-
-  window.onload = async () => {
-    const adBlockEnabled = await detectAdBlock();
-
-    if (adBlockEnabled) {
-      body.setAttribute('aria-hidden', 'true');
-      if (hiddenBody) {
-        body.innerHTML = '';
-      }
-      showBannerAdBlock();
-    }
-  };
-
-  async function detectAdBlock() {
+async function detectAdBlock() {
     let adBlockEnabled = false;
     const googleAdUrl = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-  
+
     try {
         const keywordsToCheck = ['uBlock', 'height:1px!important'];
-  
+
         const response = await fetch(new Request(googleAdUrl));
         if (!response.headers.get('content-length')) {
             adBlockEnabled = true;
         }
-  
+
         const responseText = await response.text();
         const adBlockDetected = keywordsToCheck.some(keyword => responseText.includes(keyword));
         if (adBlockDetected) {
@@ -55,209 +29,220 @@ const hiddenBody = false
     } finally {
         console.log(`AdBlock Enabled: ${adBlockEnabled}`);
     }
-  
+
     return adBlockEnabled;
   }
 
-  function showBannerAdBlock () {
-    body.style.overflow = 'hidden'
+    const hiddenBody = false
 
-    body.innerHTML +=
-          `
-          <div style="${getRandomStyle()};">
-            <div style="width: 100%; max-width: 500px; margin: auto; background-color: white; border-radius: 1rem; overflow: hidden; position: relative;">
+    const isItalianLanguage = navigator.language === 'it-IT' ? true : false;
 
-            <img src="${imagesCdnUrl}/logo-small.svg" style="position: absolute; top: 0; right: 0; background-color: #D9D9D9; padding: 10px; border-bottom-left-radius: 1rem;">
+    const imagesCdnUrl = 'https://cdn.jsdelivr.net/gh/The-3Labs-Team/js-anti-adblock@main/assets'  
 
-            <!-- Content -->
-            <section id="content">
-              ${getContentFirstPage()}
-            </section>
+    const body = document.querySelector('body')
 
-            <p style="text-align: center; margin: 20px 0; font-size: .7rem;">
-                ${i18next.t('banner.content')}
-            </p>
+    window.onload = async () => {
+      const adBlockEnabled = await detectAdBlock();
 
-            <!-- Buttons -->
-            <div style="display: flex; border-top: 1px solid #E5E7EB">
-
-            <span onclick="toggleContent()" id="how-to-remove" style="width: 50%; height: 60px; padding: 10px; text-align: center; display: flex; justify-content: center; align-items:center; cursor: pointer; background-color: white;">
-              ${i18next.t('banner.howToRemove')}
-            </span>
-            <span onclick="location.reload()" style="width: 50%; height: 60px; padding: 10px; text-align: center; display: flex; justify-content: center; align-items:center; cursor: pointer; background-color: black; color: white; font-weight: bold;">
-              ${i18next.t('banner.okDone')}
-            </span>
-
-            </div>
-        </div>
-
-          <style>
-          
-          *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+      if (adBlockEnabled) {
+        body.setAttribute('aria-hidden', 'true');
+        if (hiddenBody) {
+          body.innerHTML = '';
         }
-    
-          #ad-icon-small{
-                  display: none;
-              }
-
-          @media screen and (max-width: 500px){
-              #ad-icon{
-                  display: none;
-              }
-
-              #ad-icon-small{
-                  display: inline-block;
-              }
-              
-          }
-      </style>
-  `
-    const script = document.createElement('script');
-    script.textContent = `
-      function toggleContent() {
-        const content = document.getElementById('content');
-        const button = document.getElementById('how-to-remove');
-        if (content.innerHTML.includes('<div id="content-1"')) {
-          content.innerHTML = \`${getContentSecondPage()}\`;
-          button.innerHTML = \`${getReturnBackButton()}\`;
-        } else {
-          content.innerHTML = \`${getContentFirstPage()}\`;
-          button.innerHTML = \`${getHowDisableButton()}\`;
-        }
+        showBannerAdBlock();
       }
-    `;
-    body.appendChild(script);
-  }
+    };
 
+    function showBannerAdBlock () {
+      body.style.overflow = 'hidden'
 
-  function getRandomStyle () {
-    const styles = [
-      {
-        name: 'width',
-        value: '100%'
-      },
-      {
-        name: 'height',
-        value: '100vh'
-      },
-      {
-        name: 'padding',
-        value: '10px'
-      },
-      {
-        name: 'background-color',
-        value: 'rgba(0,0,0,0.68)'
-      },
-      {
-        name: 'position',
-        value: 'fixed'
-      },
-      {
-        name: 'top',
-        value: '0'
-      },
-      {
-        name: 'left',
-        value: '0'
-      },
-      {
-        name: 'z-index',
-        value: '999999'
-      },
-      {
-        name: 'display',
-        value: 'flex'
-      },
-      {
-        name: 'font-family',
-        value: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol'
-      },
-      {
-        name: 'backdrop-filter',
-        value: 'blur(5px) grayscale(100%)'
-      },
-      
-    ]
+      body.innerHTML +=
+            `
+            <div style="${getRandomStyle()};">
+            <!-- <div class="style"> -->
+                <div style="width: 100%; max-width: 500px; margin: auto; background-color: white; border-radius: 1rem; overflow: hidden; position: relative;">
 
-    const randomStyle = Array.from({ length: styles.length }, (_, index) => index)
-      .sort(() => Math.random() - 0.5)
+                <img src="${imagesCdnUrl}/logo-small.svg" style="position: absolute; top: 0; right: 0; background-color: #D9D9D9; padding: 10px; border-bottom-left-radius: 1rem;">
 
-    return randomStyle.map(index => `${styles[index].name}: ${styles[index].value};`).join(' ')
-  }
-
-
-  function getContentFirstPage(){
-
-    return `<div id="content-1" style="display: flex; padding: 30px 10px 10px; min-height: 305px;">
-            <div style="margin-left: 10px;">
-
-                <div style="display:flex; justify-content: space-between;">
-                    <p>
-                    <span style="text-transform: uppercase;">Alt!</span> ${i18next.t('banner.prefix')}
-                        <br>
-                        <span style="font-size: 3rem; font-weight: bold; text-transform: uppercase;">Adblock!</span>
+    
+    
+                    <!-- Content -->
+                    <section id="content">
+                      ${getContentFirstPage()}
+                    </section>
+    
+                    <p style="text-align: center; margin: 20px 0; font-size: .9rem;">
+                        ${isItalianLanguage ? 'Adblock Detector è un progetto di' : 'Adblock Detector is a  project by' } <a href="https://www.3labs.it" target="_blank" style="font-weight: bold; text-decoration: none; color: black;">3Labs™ Team</a>
                     </p>
-                    <img src="${imagesCdnUrl}/adIconSmall.png" id="ad-icon-small">
-                </div>
-
-                
-
-                <p style="font-size: 1.1rem; color: rgb(107, 114, 128); line-height: 28px; margin: 20px 0;">
-                  ${i18next.t('banner.description')}
-                </p>
+    
+                    
+                    <!-- Buttons -->
+    
+                    <div style="display: flex; border-top: 1px solid #E5E7EB">
+    
+                    <span onclick="toggleContent()" id="how-to-remove" style="width: 50%; height: 60px; padding: 10px; text-align: center; display: flex; justify-content: center; align-items:center; cursor: pointer; background-color: white; ">
+                      ${getHowDisableButton()}
+                    </span>
+                    <span onclick="location.reload()" style="width: 50%; height: 60px; padding: 10px; text-align: center; display: flex; justify-content: center; align-items:center; cursor: pointer; background-color: black; color: white; font-weight: bold; ">
+                      ${isItalianLanguage ? 'Ok, fatto!' : 'Ok, done!'}
+                    </span>
+    
+                    </div>
+    
+    
+                </div>  
             </div>
+
+            <style>
             
-            <img src="${imagesCdnUrl}/adIcon.png" id="ad-icon" style="width: 100%; height: 100%;">
-        </div> `;
-}
+            *{
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+          }
+      
+            #ad-icon-small{
+                    display: none;
+                }
 
-function getContentSecondPage(){
-  return `<div id="content-2" style="padding: 30px 10px 10px; min-height: 305px">
-        <div style="margin-left: 10px;">
-            <p style="font-weight: bold; font-size: 1.5rem; margin-bottom: 20px;">
-              ${i18next.t('info.title')}
-            </p>
+            @media screen and (max-width: 500px){
+                #ad-icon{
+                    display: none;
+                }
 
-            <ol style="font-size: 1.1rem; color: rgb(107, 114, 128);">
-                <li style="margin: 25px 20px;">
-                  <span style="font-weight: bold;">${i18next.t('info.step1.instruction')}</span>. ${i18next.t('info.step1.description')}
-                </li>   
-                <li style="margin: 25px 20px;">
-                  ${i18next.t('info.step2.instruction')}
-                </li>
-                <li style="margin: 25px 20px;">
-                  ${i18next.t('info.step3.instruction')}
-                </li>
-            </ol>
+                #ad-icon-small{
+                    display: inline-block;
+                }
+                
+            }
+        </style>
+    `
+      const script = document.createElement('script');
+      script.textContent = `
+        function toggleContent() {
+          const content = document.getElementById('content');
+          const button = document.getElementById('how-to-remove');
+          if (content.innerHTML.includes('<div id="content-1"')) {
+            content.innerHTML = \`${getContentSecondPage()}\`;
+            button.innerHTML = \`${getReturnBackButton()}\`;
+          } else {
+            content.innerHTML = \`${getContentFirstPage()}\`;
+            button.innerHTML = \`${getHowDisableButton()}\`;
+          }
+        }
+      `;
+      body.appendChild(script);
+    }
 
-        </div>
-    </div>`;
-}
 
-  function getHowDisableButton(){
-    return i18next.t('banner.howDisable');
+    function getRandomStyle () {
+      const styles = [
+        {
+          name: 'width',
+          value: '100%'
+        },
+        {
+          name: 'height',
+          value: '100vh'
+        },
+        {
+          name: 'padding',
+          value: '10px'
+        },
+        {
+          name: 'background-color',
+          value: 'rgba(0,0,0,0.68)'
+        },
+        {
+          name: 'position',
+          value: 'fixed'
+        },
+        {
+          name: 'top',
+          value: '0'
+        },
+        {
+          name: 'left',
+          value: '0'
+        },
+        {
+          name: 'z-index',
+          value: '999999'
+        },
+        {
+          name: 'display',
+          value: 'flex'
+        },
+        {
+          name: 'font-family',
+          value: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol'
+        },
+        {
+          name: 'backdrop-filter',
+          value: 'blur(5px) grayscale(100%)'
+        },
+        
+      ]
+
+      const randomStyle = Array.from({ length: styles.length }, (_, index) => index)
+        .sort(() => Math.random() - 0.5)
+
+      return randomStyle.map(index => `${styles[index].name}: ${styles[index].value};`).join(' ')
+    }
+
+
+    function getContentFirstPage(){
+
+      return `<div id="content-1" style="display: flex; padding: 30px 10px 10px; min-height: 305px;">
+              <div style="margin-left: 10px;">
+
+                  <div style="display:flex; justify-content: space-between;">
+                      <p>
+                      ${isItalianLanguage ? '<span style="text-transform: uppercase;">Alt!</span> Mi è sembrato di vedere un...' : '<span style="text-transform: uppercase;">Alt!</span> I thought I saw an...' }
+                          <br>
+                          <span style="font-size: 3rem; font-weight: bold; text-transform: uppercase;">Adblock!</span>
+                      </p>
+                      <img src="${imagesCdnUrl}/adIconSmall.png" id="ad-icon-small">
+                  </div>
+
+                  
+
+                  <p style="font-size: 1.1rem; color: rgb(107, 114, 128); line-height: 28px; margin: 20px 0;">
+                      ${isItalianLanguage ? 'Abbiamo limitato la pubblicità sui nostri siti, ti chiediamo la cortesia di disabilitare l\'AdBlock per continuare a navigare. Grazie!' : 'We have limited advertising on our sites, we ask you to disable AdBlock to continue browsing. Thank you!'}
+                  </p>
+              </div>
+              
+              <img src="${imagesCdnUrl}/adIcon.png" id="ad-icon" style="width: 100%; height: 100%;">
+          </div> `;
   }
 
-  function getReturnBackButton(){
-    return i18next.t('banner.back');
-  }
+    function getContentSecondPage(){
+      return `<div id="content-2" style="padding: 30px 10px 10px; min-height: 305px">
+            <div style="margin-left: 10px;">
+                <p style="font-weight: bold; font-size: 1.5rem; margin-bottom: 20px;">
+                ${isItalianLanguage ? 'Come disattivare l\'Ad Blocker' : 'How to disable Ad Blocker'}
+                </p>
 
-  // Esportare le funzioni e le variabili
-if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-  module.exports = {
-    hiddenBody,
-    imagesCdnUrl,
-    detectAdBlock,
-    showBannerAdBlock
-  };
-} else {
-  window.myLibrary = {
-    hiddenBody,
-    imagesCdnUrl,
-    detectAdBlock,
-    showBannerAdBlock
-  };
-}
+                <ol style="font-size: 1.1rem; color: rgb(107, 114, 128);">
+                    <li style="margin: 25px 20px;">
+                      ${isItalianLanguage ? '<span style="font-weight: bold;">Clicca sull\'icona dell\'estensione per il blocco annunci</span>. Di solito si trova nell\'angolo in alto a destra dello schermo.' : '<span style="font-weight: bold;">Click on the extension icon for the ad blocker</span>. It is usually located in the top right corner of the screen.'}
+                    </li>   
+                    <li style="margin: 25px 20px;">
+                      ${isItalianLanguage ? 'Segui le istruzioni per <span style="font-weight: bold;">disattivare il blocco annunci</span>.' : 'Follow the instructions to <span style="font-weight: bold;">disable ad blocking</span>.'}
+                    </li>
+                    <li style="margin: 25px 20px;">
+                      ${isItalianLanguage ? 'Aggiorna la pagina cliccando su <span style="font-weight: bold;">"Ok, fatto!"</span>' : 'Refresh the page by clicking on <span style="font-weight: bold;">"Ok, done!"</span>'}
+                    </li>
+                </ol>
+
+            </div>
+        </div>`;
+    }
+
+    function getHowDisableButton(){
+      return `${isItalianLanguage ? 'Come lo disattivo?' : 'How to disable?'}`;
+    }
+
+    function getReturnBackButton(){
+      return `${isItalianLanguage ? 'Indietro' : 'Back'}`;
+    }

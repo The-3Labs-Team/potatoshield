@@ -86,6 +86,16 @@ This can be easily detected by adblocker lists, so it is not recommended.
 
 > 💡 Why not using CDN? Because adblockers can easily block the CDN URL. You can host the file on your own server and randomize the name to avoid detection. Remember to rotate the file name every week or so, or Adblock users (and lists) will be able to block it.
 
+### 4. Use the CDN (not recommended)
+
+You can use the CDN to import the script in your layout:
+
+```html
+	 <script src="https://cdn.jsdelivr.net/gh/The-3Labs-Team/potatoshield@main/dist/potatoshield.min.ob.js"></script>
+```
+
+This can be easily detected by adblocker lists, so it is not recommended.
+
 ## Make it undetectable
 
 To make potatoshield undetectable by adblockers, you can use the following tips:
