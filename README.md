@@ -1,6 +1,8 @@
 # potatoshield
 🥔 The final solution for block Adblock users on your website
 
+> ⚠️ **Note*: This project is still in development. The current version is a beta version, and it may not work as expected, it may have bugs and it may change in the future. Use it at your own risk.
+
 For the best experience, please read the RTFM article [here](...).
 
 ## Features
@@ -10,7 +12,7 @@ For the best experience, please read the RTFM article [here](...).
 - [x] Easy to use
 - [x] No dependencies
 - [x] Open-source
-- [x] Shows a banner to the user
+- [x] Shows a banner to the user in multiple languages
 
 ## List of detected adblocks
 
@@ -23,7 +25,7 @@ If you want to update the list, please see the CONTRIBUTOR.md file
 | Software | Version | Detected | Last check         |
 |---------|----------|----------|--------------------|
 | uBlock  | 1.0      | ✅       | 2024-07-29         |
-// Adblock, Adblock Plus, Adblock Ultimate, Adblock Max, AdGuard, Ghostery
+<!-- Adblock, Adblock Plus, Adblock Ultimate, Adblock Max, AdGuard, Ghostery -->
 
 ### Browsers
 

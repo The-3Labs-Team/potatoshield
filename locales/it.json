@@ -1,0 +1,29 @@
+{
+    "banner": {
+        "prefix": "Pensavo di aver visto un...",
+        "description": "Abbiamo pubblicità limitata sui nostri siti, ti chiediamo di disabilitare AdBlock per continuare a navigare. Grazie!",
+        "content": "PotatoShield è un progetto del Team 3Labs™",
+        "howToRemove": "Come rimuovere",
+        "okDone": "Ok, fatto",
+        "howToDisable": "Come disabilitare",
+        "back": "Indietro"
+    },
+    "info": {
+        "title": "Come disabilitare Ad Blocker",
+        "step1": 
+            {
+                "instruction": "Clicca sull'icona dell'estensione per il blocco degli annunci",
+                "description": "Di solito si trova nell'angolo in alto a destra dello schermo."
+            },
+        "step2":
+            {
+                "instruction": "Segui le istruzioni per disabilitare il blocco degli annunci",
+                "description": ""
+            },
+        "step3":
+            {
+                "instruction": "Ricarica la pagina cliccando su \"Ok, fatto!\"",
+                "description": ""
+            }
+    }
+}

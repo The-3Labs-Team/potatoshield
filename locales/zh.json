@@ -1,0 +1,27 @@
+{
+    "banner": {
+        "prefix": "我以为我看到了...",
+        "description": "我们的网站上有限量广告，我们请求您禁用AdBlock以继续浏览。谢谢！",
+        "content": "PotatoShield是3Labs™团队的项目",
+        "howToRemove": "如何移除",
+        "okDone": "好的，完成了",
+        "howToDisable": "如何禁用",
+        "back": "返回"
+    },
+    "info": {
+        "title": "如何禁用广告拦截器",
+        "step1": 
+            {
+                "instruction": "点击广告拦截器扩展图标",
+                "description": "它通常位于屏幕右上角。"
+            },
+        "step2":
+            {
+                "instruction": "按照说明禁用广告拦截"
+            },
+        "step3":
+            {
+                "instruction": "点击\"好的，完成了！\"刷新页面"
+            }
+    }
+}
