@@ -18,9 +18,22 @@ Here you can find a list of adblock software that has been detected by potatoshi
 
 If you want to update the list, please see the CONTRIBUTOR.md file
 
+### Adblockers
+
 | Software | Version | Detected | Last check         |
 |---------|----------|----------|--------------------|
 | uBlock  | 1.0      | ✅       | 2024-07-29         |
+// Adblock, Adblock Plus, Adblock Ultimate, Adblock Max, AdGuard, Ghostery
+
+### Browsers
+
+| Browser | Version | Detected | Last check         |
+|---------|----------|----------|--------------------|
+| Brave  | 92.0    | ✅       | 2024-07-29         |
+| Opera | 90.0    | ✅       | 2024-07-29         |
+| Arc Browser    | 92.0    | ✅       | 2024-07-29         |
+| Safari  | 14.0    | ✅       | 2024-07-29         |
+
 
 ## How to use
 
@@ -40,14 +53,12 @@ Then, you can import it in one of your main JavaScript file:
 import 'potatoshield';
 ```
 
-> **Note:** For better undetection, you can build rotate the build of your js file manually or with a cron job.
-
 ### 2. Download the script (not recommended)
 
-You can download the script from releases, rename it to something less suspicious and import it in your website:
+You can download the script from releases, rename it to something less suspicious and import it in your layout:
 
 ```html
-<script src="your-potato-random-file.js"></script>
+<script type="module" defer src="your-potato-random-file.js"></script>
 ```
 
 > 💡 Why not using CDN? Because adblockers can easily block the CDN URL. You can host the file on your own server and randomize the name to avoid detection. Remember to rotate the file name every week or so, or Adblock users (and lists) will be able to block it.
