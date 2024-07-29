@@ -72,7 +72,7 @@ async function detectAdBlock() {
                     </section>
     
                     <p style="text-align: center; margin: 20px 0; font-size: .9rem;">
-                        ${isItalianLanguage ? 'Adblock Detector è un progetto di' : 'Adblock Detector is a  project by' } <a href="https://www.3labs.it" target="_blank" style="font-weight: bold; text-decoration: none; color: black;">3Labs™ Team</a>
+                        ${isItalianLanguage ? 'PotatoShield è un progetto di' : 'PotatoShield is a  project by' } <a href="https://github.com/The-3Labs-Team/potatoshield" target="_blank" style="font-weight: bold; text-decoration: none; color: black;">3Labs™ Team</a>
                     </p>
     
                     
