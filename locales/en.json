@@ -1,0 +1,27 @@
+{
+    "banner": {
+        "prefix": "I thought I saw an...",
+        "description": "We have limited advertising on our sites, we ask you to disable AdBlock to continue browsing. Thank you!",
+        "content": "PotatoShield is a project by 3Labs™ Team",
+        "howToRemove": "How to remove",
+        "okDone": "Ok, done",
+        "howToDisable": "How to disable",
+        "back": "Back"
+    },
+    "info": {
+        "title": "How to disable Ad Blocker",
+        "step1": 
+            {
+                "instruction": "Click on the extension icon for the ad blocker",
+                "description": "It is usually located in the top right corner of the screen."
+            },
+        "step2":
+            {
+                "instruction": "Follow the instructions to disable ad blocking"
+            },
+        "step3":
+            {
+                "instruction": "Refresh the page by clicking on \"Ok, done!\""
+            }
+    }
+}
