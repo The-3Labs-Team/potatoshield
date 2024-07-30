@@ -1,4 +1,4 @@
-# Potatoshield - Block Adblock on your website
+# PotatoShield - Detect & Block Adblock on your website
 
 [![Lint](https://github.com/The-3Labs-Team/potatoshield/actions/workflows/lint.yml/badge.svg)](https://github.com/The-3Labs-Team/potatoshield/actions/workflows/lint.yml)
 [![Playwright](https://github.com/The-3Labs-Team/potatoshield/actions/workflows/playwright.yml/badge.svg)](https://github.com/The-3Labs-Team/potatoshield/actions/workflows/playwright.yml)
@@ -22,30 +22,31 @@ Potatoshield is a revolutionary script designed to empower website owners in the
 
 ## List of detected adblocks
 
-Here you can find a list of adblock software that has been detected by potatoshield, along with their versions and the date of the last check.
-
-If you want to update the list, please see the CONTRIBUTOR.md file
+Here you can find a list of adblock software that has been detected by PotatoShield, along with their versions and the date of the last check.
 
 ### Adblockers
 
 | Software         | Version | Detected | Last check | Official Site                |
 |------------------|---------|----------|------------|------------------------------|
 | uBlock           | 1.0     | ✅        | 2024-07-29 | [uBlock](https://ublock.org) |
-| Adblock          | N/D     | ✅        | 2024-07-29 | [Adblock](https://getadblock.com) |
-| Adblock Plus     |         |          |            | [Adblock Plus](https://adblockplus.org) |
-| Adblock Ultimate |         |          |            | [Adblock Ultimate](https://adblockultimate.net) |
-| Adblock Max      |         |          |            | [Adblock Max](https://adblockmax.com) |
-| AdGuard          |         |          |            | [AdGuard](https://adguard.com) |
-| Ghostery         |         |          |            | [Ghostery](https://ghostery.com) |
+| Adblock          | 6.6.0   | ❌        | 2024-07-30 | [Adblock](https://getadblock.com) |
+| Adblock Plus     | 4.4     | ✅        | 2024-07-30 | [Adblock Plus](https://adblockplus.org) |
+| Adblock Ultimate | 3.8.26  | ✅        | 2024-07-30 | [Adblock Ultimate](https://adblockultimate.net) |
+| AdGuard AdBlocker| 4.3.64  | ✅        | 2024-07-30 | [AdGuard](https://adguard.com) |
+| Ghostery         | 8.12.13 | ✅        | 2024-07-30 | [Ghostery](https://ghostery.com) |
+| Lock Adblock     | 3.5.1   | ✅        | 2024-07-30 | [Lock Adblock](https://chromewebstore.google.com/detail/lock-adblock/ciadmnanclfadfcfjbbajmggediammha?hl=it&pli=1) |
+| SmartAdblock     | 1.1.4   | ✅        | 2024-07-30 | [SmartAdblock](https://www.smartadblock.co.uk/) |
 
 ### Browsers
 
-| Browser | Version | Detected | Last check         |
+// TODO
+
+<!--| Browser | Version | Detected | Last check         |
 |---------|----------|----------|--------------------|
 | Brave  | 92.0    | ✅       | 2024-07-29         |
 | Opera | 90.0    | ✅       | 2024-07-29         |
 | Arc Browser    | 92.0    | ✅       | 2024-07-29         |
-| Safari  | 14.0    | ✅       | 2024-07-29         |
+| Safari  | 14.0    | ✅       | 2024-07-29         |-->
 
 ## Before you start
 
