@@ -11,6 +11,8 @@ Potatoshield is a revolutionary script designed to empower website owners in the
 
 > ⚠️ **Note*: This project is still in development. The current version is a beta version, and it may not work as expected, it may have bugs and it may change in the future. Use it at your own risk. For the best experience, please read the RTFM article [here](https://medium.com/@murdercode/defeat-adblock-step-by-step-guide-to-blocking-adblock-on-your-website-c78c1143e34d).
 
+<p align="center"><img src="https://github.com/the-3labs-team/potatoshield/raw/HEAD/assets/demo.gif" alt="PotatoShield Demo Gif"></p>
+
 ## Features
 - [x] Detect adblock software on your website
 - [x] Undetectable by adblockers (with some tweaks)

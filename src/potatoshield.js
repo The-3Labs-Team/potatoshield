@@ -1,7 +1,7 @@
 const hiddenBody = false;
 const isItalianLanguage = navigator.language === "it-IT";
 const imagesCdnUrl =
-  "https://cdn.jsdelivr.net/gh/The-3Labs-Team/js-anti-adblock@main/assets";
+  "https://cdn.jsdelivr.net/gh/The-3Labs-Team/potatoshield@main/assets";
 const body = document.querySelector("body");
 
 window.onload = async () => {
