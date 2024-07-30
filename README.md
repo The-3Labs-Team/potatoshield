@@ -29,7 +29,7 @@ Here you can find a list of adblock software that has been detected by PotatoShi
 | Software         | Version | Detected | Last check | Official Site                |
 |------------------|---------|----------|------------|------------------------------|
 | uBlock           | 1.0     | ✅        | 2024-07-29 | [uBlock](https://ublock.org) |
-| Adblock          | 6.6.0   | ❌        | 2024-07-30 | [Adblock](https://getadblock.com) |
+| Adblock          | 6.6.0   | ✅        | 2024-07-30 | [Adblock](https://getadblock.com) |
 | Adblock Plus     | 4.4     | ✅        | 2024-07-30 | [Adblock Plus](https://adblockplus.org) |
 | Adblock Ultimate | 3.8.26  | ✅        | 2024-07-30 | [Adblock Ultimate](https://adblockultimate.net) |
 | AdGuard AdBlocker| 4.3.64  | ✅        | 2024-07-30 | [AdGuard](https://adguard.com) |
